@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item List</title>
+</head>
+<body>
+    <h1>Items</h1>
+    <form method="POST" action="/add">
+        <input type="text" name="name" placeholder="Enter item name" required>
+        <button type="submit">Add</button>
+    </form>
+    <!-- <ol>
+        {% for item in items %}
+            <li>{{ item[1] }}
+                <a href="/delete/{{ item[0] }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ol> -->
+    <ol style="list-style: none; padding-left: 0;">
+        {% for item in items %}
+            <li>
+                <strong>{{ item[0] }}.</strong> {{ item[1] }}
+                <a href="/delete/{{ item[0] }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
